@@ -19,6 +19,11 @@ const CustomField = ({
     formState: { errors },
   } = useFormContext();
 
+  console.log(
+    'error', errors,
+    'fieldData', fieldData,
+  );
+
   if (!CustomComponent) return null;
 
   return (
@@ -31,6 +36,9 @@ const CustomField = ({
       <Controller
         name={name}
         control={control}
+        rules={{
+          required: fieldData.isRequired && "This field is reuqired",
+        }}
         render={({ field }) => <CustomComponent {...field} ref={null} />}
       />
     </InputWrapper>
