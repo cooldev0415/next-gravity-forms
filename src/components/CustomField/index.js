@@ -19,11 +19,6 @@ const CustomField = ({
     formState: { errors },
   } = useFormContext();
 
-  console.log(
-    'error', errors,
-    'fieldData', fieldData,
-  );
-
   if (!CustomComponent) return null;
 
   return (
